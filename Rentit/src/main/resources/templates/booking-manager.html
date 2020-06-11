@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Booking Manager</title>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900|Display+Playfair:200,300,400,700">
+<link rel="stylesheet" href="fonts/icomoon/style.css">
+
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/magnific-popup.css">
+<link rel="stylesheet" href="/css/jquery-ui.css">
+<link rel="stylesheet" href="/css/owl.carousel.min.css">
+<link rel="stylesheet" href="/css/owl.theme.default.min.css">
+
+<link rel="stylesheet" href="/css/bootstrap-datepicker.css">
+
+<link rel="stylesheet" href="/fonts/flaticon/font/flaticon.css">
+
+
+
+<link rel="stylesheet" href="/css/aos.css">
+
+<link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<style>
+#customers td, #customers th {
+	border: 1px solid #ddd;
+	padding: 3px;
+	text-align: center;
+}
+
+#customers tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+#customers tr:hover {
+	background-color: #ddd;
+}
+
+#customers th {
+	padding-top: 1px;
+	padding-bottom: 1px;
+	text-align: center;
+	background-color: #f9f9f9;
+	color: black;
+}
+
+.PageHeadingCenter {
+	font-family: Segoe UI Light, Helvetica Neue, Verdana;
+	font-size: 25px;
+	color: #009be1;
+	margin-right: 1px;
+}
+
+.buttonClass {
+	font-size: 9pt;
+	vertical-align: middle;
+	cursor: hand;
+	color: white;
+	font-style: normal;
+	FONT-FAMILY: Helvetica Neue, Verdana;
+	text-align: center;
+	width: 95px;
+	border-radius: 5px;
+	border: 1px solid rgb(255, 95, 1);
+	background-color: rgb(255, 95, 1);
+}
+
+.mainSearchContentPanel {
+	border: 1px solid #DDD;
+	background-color: #F9F9F9;
+	border-radius: 5px;
+	padding-top: 13px;
+	padding-bottom: 13px;
+}
+</style>
+<body>
+	<form th:action="@{/transactions}" th:object="${transactionob}"
+		method="POST">
+		<div class="site-wrap">
+
+			<div class="site-mobile-menu">
+				<div class="site-mobile-menu-header">
+					<div class="site-mobile-menu-close mt-3">
+						<span class="icon-close2 js-menu-toggle"></span>
+					</div>
+				</div>
+				<div class="site-mobile-menu-body"></div>
+			</div>
+
+			<header class="site-navbar py-3" role="banner"
+				style="background-image: url(images/hero_bg_1.jpg);">
+
+				<div class="container">
+					<div class="row align-items-center">
+
+						<div class="col-11 col-xl-2">
+							<h1 class="mb-0">
+								<a href="/index" class="text-white h2 mb-0">Rent-it!</a>
+							</h1>
+						</div>
+						<div class="col-12 col-md-10 d-none d-xl-block">
+							<nav class="site-navigation position-relative text-right"
+								role="navigation">
+
+								<ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
+									<li><a href="/admin">Home</a></li>
+								</ul>
+							</nav>
+						</div>
+
+					</div>
+
+				</div>
+		</div>
+
+		</header>
+
+
+
+
+
+
+
+		<div class="site-section">
+			<div class="site-section bg-light" id="section-contact">
+				<div class="container">
+					<div class="row justify-content-center mb-5">
+						<div class="col-md-7 text-center border-primary">
+							<h2 class="font-weight-light text-primary">Transactions</h2>
+							<p class="color-black-opacity-5">View Transaction Information</p>
+						</div>
+					</div>
+
+					<div style="padding: 3px;"></div>
+
+					<div style="padding: 3px;"></div>
+
+					<div class="mainSearchContentPanel">
+						<div class="row">
+								<div class="col-sm-1"></div>
+								<div class="col-sm-2">
+									<label for="lblCartype">Client First Name</label>
+								</div>
+								<div class="col-sm-2">
+									<input type="text"  class="form-control" Placeholder="Enter First Name"
+										name="clientFirstName" >
+								</div>
+								<div class="col-sm-1"></div>
+								<div class="col-sm-1"></div>
+								<div class="col-sm-2">
+									<label for="lblModel">Client Last Name</label>
+								</div>
+								<div class="col-sm-2">
+									<input type="text"  class="form-control"
+										Placeholder=" Enter Last Name" name="clientLastName">
+								</div> 
+								<div class="col-sm-1"></div>
+							</div>
+						<div class="row">
+							<div class="col-sm-1"></div>
+							<div class="col-sm-2">
+								<label for="lblCartype">Vehicle Model</label>
+							</div>
+							<div class="col-sm-2">
+								<input type="text"  class="form-control" Placeholder="Enter Name"
+									name="vehicleModel" >
+							</div>
+							<div class="col-sm-1"></div>
+							<div class="col-sm-1"></div>
+							<div class="col-sm-2">
+								<label for="lblModel">Vehicle Make</label>
+							</div>
+							<div class="col-sm-2">
+								<input type="text"  class="form-control"
+									Placeholder=" Enter  Vehicle " name="vehicleMake">
+							</div> 
+							<div class="col-sm-1"></div>
+						</div>
+						<div style="padding: 5px;"></div>
+						<div class="row">
+							<div class="col-sm-1"></div>
+							<div class="col-sm-2">
+								<label for="lblCartype">Due date</label>
+							</div>
+							<div class="col-sm-3">
+								<input type="date" class="form-control"  name="dueDate" >
+
+							</div>
+
+							<div class="col-sm-1"></div>
+
+							<div class="col-sm-2">
+								<label for="lblModel">Start Date</label>
+							</div>
+							<div class="col-sm-3">
+								<input type="date"  class="form-control"
+									name="startDate" >
+							</div>
+							<div class="col-sm-1"></div>
+
+						</div>
+
+
+
+					</div>
+					<div style="padding: 5px;"></div>
+					<div class="row">
+
+
+						<div class="col-sm-2"></div>
+						<div class="col-sm-3"></div>
+						<div class="col-sm-2">
+							<button type="submit" value="Submit" style="margin-right: 40px;"
+								name="transactionmanager" id="transactionmanager"
+								class="buttonClass">Search</button>
+						</div>
+
+					</div>
+					<div style="padding: 3px;"></div>
+
+					<div style="padding: 3px;"></div>
+					<table id="customers">
+						<tr>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th style="width: 16%;">License Number</th>
+							<th>Booked On</th>
+							<th style="width: 12%;">Start Date</th>
+							<th style="width: 12%;">Due Date</th>
+							
+							<th style="width: 12%;">Return Date</th>
+							<th style="width: 12%;">Cancel Date</th>
+							<th>Make</th>
+							<th>Model</th>
+							<th>Vehicle Licence Number</th>
+							<th>Status</th>
+							
+							
+
+
+
+						</tr>
+
+						<tr th:each="booking : ${bookings}">
+							<td th:text="${booking.get(0)}"></td>
+							<td th:text="${booking.get(1)}"></td>
+							<td th:text="${booking.get(2)}"></td>
+							<td th:text="${booking.get(3)}"></td>
+							<td th:text="${booking.get(4)}"></td>
+							<td th:text="${booking.get(5)}"></td>
+							<td th:text="${booking.get(6)}"></td>
+							<td th:text="${booking.get(7)}"></td>
+							<td th:text="${booking.get(8)}"></td>
+							<td th:text="${booking.get(9)}"></td>
+							<td th:text="${booking.get(10)}"></td>
+							<td>
+
+								<div th:if="${booking.get(6)}">
+									RETURNED</div>
+								<div th:if="${booking.get(7)}">
+									CANCELLED</div>
+								<div
+									th:if="!${booking.get(6)} and !${booking.get(7)}">
+									CONFIRMED</div>
+
+							</td>
+
+						</tr>
+					</table>
+				</div>
+			</div>
+
+		</div>
+
+
+	</form>
+
+
+	<footer class="site-footer"
+		style="background-image: url(images/hero_bg_5.jpg);"> </footer>
+	</div>
+
+	<script src="/js/jquery-3.3.1.min.js"></script>
+	<script src="/js/jquery-migrate-3.0.1.min.js"></script>
+	<script src="/js/jquery-ui.js"></script>
+	<script src="/js/popper.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/owl.carousel.min.js"></script>
+	<script src="/js/jquery.stellar.min.js"></script>
+	<script src="/js/jquery.countdown.min.js"></script>
+	<script src="/js/jquery.magnific-popup.min.js"></script>
+	<script src="/js/bootstrap-datepicker.min.js"></script>
+	<script src="/js/aos.	js"></script>
+
+	<script src="js/main.js"></script>
+
+</body>
+</html>
