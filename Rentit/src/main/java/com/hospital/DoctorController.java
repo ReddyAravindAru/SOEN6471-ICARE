@@ -24,6 +24,14 @@ public class DoctorController {
 	     
 	    return "doctor";
 	}
+
+	@RequestMapping("/doctor{id}")
+	public String viewDoctorProfile(Model model)
+	{
+		Doctor doctor = service.getDoctorByID();
+		return doctor;
+	}
+
 	
 //	@GetMapping("/test")
 //	public String viewHome() {
