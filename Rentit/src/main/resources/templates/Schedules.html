@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>Doctor List</title>
+</head>
+<body>
+<div align="center">
+    <h1>Schedule List</h1>
+    <a href="/newSchedule">Add new Schedule</a>
+    <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+               
+                <th>Employee Name</th>
+                <th>Shift start time</th>
+                <th>Shift end time</th>
+                <th>Designation</th>
+                <th>Appointments</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="schedule : ${listSchedule}">
+                
+                <td th:text="${schedule.name}">Name</td>
+                <td th:text="${schedule.shift_start}">Shift start</td>
+                <td th:text="${schedule.shift_end}">Shift end</td>
+                <td th:text="${schedule.designation}">Designation</td>
+                <td th:text="${schedule.appointments}">Appointments</td>
+                <td>
+                    <a th:href="@{'/editSchedule/' + ${schedule.id}}">Edit</a>
+                    &nbsp;&nbsp;&nbsp;
+                    <a th:href="@{'/deleteSchedule/' + ${schedule.id}}">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>   
+</body>
+</html>
