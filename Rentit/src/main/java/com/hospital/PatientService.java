@@ -29,12 +29,4 @@ public class PatientService {
         repo.deleteById(id);
     }
 
-    /*public Patient editName(long id, String name) {
-
-        Patient patient = repo.get("id");
-        patient.setName("name");
-        repo.save(patient);
-        return patient;
-    }*/
-
 }
