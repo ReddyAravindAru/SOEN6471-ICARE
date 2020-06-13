@@ -22,13 +22,13 @@ public class DoctorService {
         repo.save(doctor);
     }
      
-    /*public Doctor get(long id) {
+    public Doctor get(long id) {
         return repo.findById(id).get();
-    }*/
+    }
 
-    /*public Doctor getDoctorByID(long id) {
+    public Doctor getDoctorByID(long id) {
         return repo.findById(id).get();
-    }*/
+    }
 
     public void delete(long id) {
         repo.deleteById(id);
