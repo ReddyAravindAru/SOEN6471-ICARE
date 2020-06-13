@@ -24,19 +24,19 @@ public class PatientController {
 	    return "patient";
 	}
 
-	@RequestMapping(value = "/patient{id}", method = RequestMethod.get)
+	/*@RequestMapping(value = "/patient{id}", method = RequestMethod.get)
 	public String viewPatientProfile(Model model)
 	{
 		Patient patient = service.get("id");
 		return patient;
-	}
+	}*/
 
-	@RequestMapping("/patient{id}")
+	/*@RequestMapping("/patient{id}")
 	public String editPatientProfile(Model model)
 	{
 		Patient patient = service.editName("id","name");
 		return patient;
-	}
+	}*/
 
 
 	
