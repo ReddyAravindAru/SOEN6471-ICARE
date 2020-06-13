@@ -12,9 +12,6 @@ import javax.persistence.Table;
 	public class Doctor {
 		@Id
 		private int id;
-		private String name;
-		private String specialization;
-		private String appointments;
 		
 		public int getId() {
 			return id;
@@ -40,6 +37,8 @@ import javax.persistence.Table;
 		public void setAppointments(String appointments) {
 			this.appointments = appointments;
 		}
-
+		private String name;
+		private String specialization;
+		private String appointments;
 	}
 
