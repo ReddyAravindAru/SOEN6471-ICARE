@@ -1,0 +1,222 @@
+
+\documentclass[
+10pt, 
+a4paper, 
+oneside,
+headinclude,footinclude,
+BCOR5mm,
+]{scrartcl}
+
+\input{structure.tex} 
+
+\hyphenation{Fortran hy-phen-ation} 
+
+\begin{titlepage}
+
+
+% -------------------------------------------------------------------
+% You need to edit the details here
+% -------------------------------------------------------------------
+
+\begin{center}
+{\LARGE \bfseries Concordia University}\\[2cm]
+
+\linespread{1.2}\huge {\bfseries SOEN 6471: ADVANCED SOFTWARE ARCHITECTURES}\\[1.5cm]
+\linespread{1.2}\huge {\bfseries iCare}\\[1.5cm]
+\linespread{1}
+\includegraphics[width=10cm]{concordia.jpeg}\\[5cm]
+{\Large\bf Zaid Abdulhadi : 25406897\\
+Aravind Ashoka Reddy : 40103248\\
+Saikiran Alagatham : 40103833\\
+DVSP Hemanth : 40104864\\
+Venkat Mani Deep Chandana : 40080924}\\[1cm]
+{\large \emph{Professor:} Pankaj Kamthan}\\[1cm]
+{\large \emph{Repo :} https://github.com/ReddyAravindAru/SOEN6471-ICARE.git}\\[1cm]% if applicable
+\vspace{\fill}
+\end{center}
+
+\end{titlepage}
+
+
+
+\begin{document}
+
+
+\renewcommand{\sectionmark}[1]{\markright{\spacedlowsmallcaps{#1}}} % The header for all pages (oneside) or for even pages (twoside)
+%\renewcommand{\subsectionmark}[1]{\markright{\thesubsection~#1}} % Uncomment when using the twoside option - this modifies the header on odd pages
+\lehead{\mbox{\llap{\small\thepage\kern1em\color{halfgray} \vline}\color{halfgray}\hspace{0.5em}\rightmark\hfil}} % The header style
+
+\pagestyle{scrheadings} % Enable the headers specified in this block
+
+
+
+
+\section{ Check List for evaluation}
+
+\begin{center}
+\begin{tabular}{|p{2cm}|p{4cm}|p{4cm}|p{4cm}| } 
+\hline
+\textbf{\textbf{Criteria}} & \textbf{Questions/metrics} & \textbf{Importance} & \textbf{Review}  \\ 
+\hline
+ \textbf{Stakeholders} & Are the stakeholders of the description defined and who are they. & 5/6 & Yes, stakeholders are defined clearly
+a number of additional stakeholders are added that could be out of scope of the project
+ \\ 
+\hline
+\textbf{Purpose} & Is the purpose of the description defined in relation to the stakeholders? & 5/6 & The purpose of the project is defined within the stakeholders needs. However, no stakeholder description is provided.
+ \\ 
+ \hline
+ \textbf{Suitability for the stakeholders} & \begin{itemize}
+     \item Does the description provide the stakeholder with the desired knowledge?
+     \item  Does the description relate to problem? Is a practical reason for the information evident?
+ \end{itemize}& 2/3 & "The description is clear overall. There are additional stakeholders mentioned that could be outside the intended proof of concept.
+Yes, there has been concerns added that brings questions from the stakeholder point of view."
+ \\ 
+ \hline
+ \textbf{Usage} & Frequency of use, Number of users,Variety of users & 5/5 & "Description is used throughout the document. The description is intended for a large number of users. 
+A variety of users with different backgrounds and functional areas will be users.
+There will be an understanding barrier of the description if not used properly. "
+ \\ 
+ \hline
+ \textbf{Scope and focus} & 
+    Scope: Is it defined what part of reality will be described(e.g. only primary processes)
+    Aspects: Is it defined what aspects will be described? The level of detail: Is it defined what level of detail
+ & 4/4 & Primary processes and functions have been the focus.
+Suitable aspects and viewpoints selected and described. 
+A high level of detail has been described in the documentation that answers many aspects in this literature.
+\hline
+ \\
+ \hline
+ \textbf{Currency of EA description} & \begin{itemize}
+     \item Does the information reflect the current enterprise?
+      \item Number and scope of architectural effects having projects carried out after the EA description have been produce
+ \end{itemize} & 3/3 & Yes, it is very close to the current enterprise solutions and needs in the health sector.
+No changes have been made.
+The current literature is recent and updated \\
+\hline
+\end{tabular}
+
+
+
+\begin{tabular}{|p{2cm}|p{4cm}|p{4cm}|p{4cm}| } 
+\hline
+\textbf{\textbf{Criteria}} & \textbf{Questions/metrics} & \textbf{Importance} & \textbf{Review}  
+ \\ 
+ \hline
+ \textbf{Currency of SA description} & \begin{itemize}
+     \item Does the information reflect the system?
+      \item Have there been any changes in the system after the architecture description was produced?
+ \end{itemize} & 3/3 & Yes, the information reflects the system to a great proximity. 
+There have no changes produced after the architecture description was produced.
+Not applicable, since there has been no updates. 
+ \\ 
+ \hline
+ \textbf{Correctness of Information} & Verification of information:2Is the information included in the description verified?Are there any incorrect arguments, or in-accurate or untrue reasoning? & 3/3 & In regards to the logical view, if the application will be hosted in the Cloud, not sure why there will be a FW and/or Load Balancer for deployment. It is not very clear what will be serviced by the Cloud hosting engine, and what will be intended for deployment. It is also mentioned that Amazon Web Services/MS Azure will be used. 
+ \\ 
+ \hline
+ \textbf{Correctness of EA} & ‘‘Substantive’’ errors/deficiencies after the EA description has been
+released. & 4/4 & There are no "substantive" errors/deficiencies in the literature document. 
+ \\ 
+ \hline
+ \textbf{Correctness of SA} & Correctness for stakeholders: Does the description present correctly
+the needs and concerns of stakeholders? &3/3 & Yes, the description clearly explains the need and concerns of stakeholder.However there are additional stakeholders whose scope can't be justified w.r.t project.      Yes the description is presented very well without ambiguity and it meets most but not all stake holders needs.                                                                                                                                                
+ \\
+ \hline
+ \textbf{EA completeness} & EA’s coverage of business areas: The degree to which EA
+description addresses needs of each business area (e.g. subjective
+evaluation score 1–10) & 2/2 & Yes it has addressed all the business needs given
+ \\ 
+ \hline
+ \textbf{Sufficiency/Completeness} & Description’s coverage of required viewpoints: The degree to which
+description addresses each required architectural viewpoint
+(e.g. subjective evaluation score 1–10). & 2/2 & Yes it has addressed all the business needs given
+ \\ 
+ \hline
+ \textbf{Consistency} &Description’s coverage of required viewpoints: The degree to which
+description addresses each required architectural viewpoint
+(e.g. subjective evaluation score 1–10). & 3/3 & Yes it has addressed all the business needs given
+ \\ 
+ \hline
+ \end{tabular}
+ 
+ \begin{tabular}{|p{2cm}|p{4cm}|p{4cm}|p{4cm}| } 
+ \hline
+\textbf{\textbf{Criteria}} & \textbf{Questions/metrics} & \textbf{Importance} & \textbf{Review}  
+\\
+\hline
+ \textbf{conformance to corporate standards} &  Does the presentation of the description conform to the corporate
+standards (if any) for such documents?. & 3/3 & The description follows the industrial standards of documentation.
+ \\ 
+ \hline
+ \textbf{Intuitiveness of the presentation} & Does the description have an intuitive structure for the stakeholder? & 3/4 & The presentation is done in a way where it is easy to understand.
+ \\ 
+ \hline
+ \textbf{Definition of Notation and structure} & Does the description have an intuitive structure for the stakeholder? 
+What is this intuitive structure?& 4/4 & Glossary has been provided and everything is clearly explained regarding the notations 
+ \\ 
+ \hline
+ \textbf{Clarity of vocabulary and standards} & Are the terms and concepts used known by the stakeholder? & 4/4 & The vocabulary used is easy to understand and and clarity is present in the concepts explained 
+ \\ 
+ \hline
+ \textbf{Information complexity} &Is there too much information included in the model? & 3/4 & The information provided is vague and there's some ambiguity.
+ \\ 
+ \hline
+ \textbf{Visual Complexity} & Proximity: Are the related objects placed near to each other
+in a model? & 4/4 & Proximity: Yes the related entities are closed placed and connected. Closure: Yes similar objects are represented in same shapes like rectangles, oval shaped entities which is consistent through out the document which helps in readability. Similarity: Yes, actors are represented in the same way everywhere like wise modules, profiles, servers and the connections between entities. Common fate:  All user functionality is clearly defined like wise to the other stake holders so it is clear that functionality is different from each other.
+ \\ 
+ \hline
+ \textbf{Maintenance of Documentation} & Ownership, Maintenance practise, maintainability of documentation & 7/10 & The document can be easily updated but there is no format on revision or version dates specified. I feel with the inclusion of version formatting completes the document for better maintainability. 
+ \\ 
+ \hline
+ \textbf{Cost effectiveness} &Cost , Amount of Documentation & 9/10  & It takes very less time to update the views part or add models to the architecture as all the views and processes are clearly separated and easy to modify the parts.
+ \\ 
+ \hline
+ \end{tabular}
+ 
+ \begin{tabular}{|p{2cm}|p{4cm}|p{4cm}|p{4cm}| } 
+\hline
+\textbf{\textbf{Criteria}} & \textbf{Questions/metrics} & \textbf{Importance} & \textbf{Review}
+\\ 
+\hline
+\textbf{Architectural frameworks and views} & Architecture framework (for EA and for SA): & 2/3 & Yes, Examples have been provided but they don’t encompass the whole/ most relevant parts of the system
+ \\ 
+ \hline{Tools support} & Support for organisation’s framework and viewpoints & 5/6 & Yes, the team has used git hub as there primary repository and for the purpose of communication google docs has been used
+ \\ 
+ \hline
+ 
+ 
+\end{tabular}
+
+\section{Roles and Responsibilities}
+\begin{tabular}{|p{5cm}|p{5cm}| } 
+\hline
+\textbf{\textbf{Criteria}} & \textbf{Reviewers}   }\\
+\hline
+Stakeholders, Purpose, Suitability
+for the
+stakeholders, Usage, Scope and focus & Zaid \\
+\hline
+Currency of EA description,Correctness of
+Information, Currency of SA description, Correctness of EA,Correctness of SA & Saikiran Alagatham \\
+\hline
+EA completeness, Sufficiency/
+completeness, Consistency, Conformance to
+corporate standards, Intuitiveness of the
+presentation & ManiDeep Chandana \\
+\hline
+Definition of the notation and structures, Clarity of the
+vocabulary and
+concepts, Information
+complexity, Visual complexity & DVSP Hemanth \\
+\hline
+Maintenance of
+documentation, Cost effectiveness, Architectural
+framework and
+views, Tools support & Aravind Reddy \\
+\hline
+\end{tabular}
+\end{center}
+
+
+
+
+\end{document}
